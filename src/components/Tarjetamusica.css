@@ -1,0 +1,10 @@
+.tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.imagen {
+    width: 100px;
+    border-radius: 100%;
+}
