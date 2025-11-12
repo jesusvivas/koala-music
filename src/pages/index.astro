@@ -13,14 +13,14 @@ const songs = (await axios.get("https://api.institutoalfa.org/api/songs")).data.
     <!-- lista de canciones -->
     {
         songs.map(function (song: any) {
-        return <Tarjetamusica song={song} />;
+        return <Tarjetamusica song={song} client:visible />;
         })
     }
     </section>
 
     <section class="flex-1">
     <!-- cancion sonando -->
-    <Cancionsonando />
+    <Cancionsonando client:visible />
     </section>
 </div>
 </Layout>
