@@ -9,7 +9,9 @@ const songs = (await axios.get("https://api.institutoalfa.org/api/songs")).data.
 
 <Layout>
 <div class="flex">
-    <section class="flex-1">
+	
+    <section class="flex-1 bg-indigo-950 px-5 py-5 border-r-2 border-indigo-900">
+		<h1 class="font-bold text-center text-4xl text-stone-300 py-2">PLAYLIST</h1>
     <!-- lista de canciones -->
     {
         songs.map(function (song: any) {
@@ -18,7 +20,7 @@ const songs = (await axios.get("https://api.institutoalfa.org/api/songs")).data.
     }
     </section>
 
-    <section class="flex-1">
+    <section class="flex-2 bg-purple-950">
     <!-- cancion sonando -->
     <Cancionsonando client:visible />
     </section>

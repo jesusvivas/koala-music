@@ -1,7 +1,4 @@
 
-import "./Tarjetamusica.css"
-
-
 interface Props {
     song: {
         _id: string
@@ -32,11 +29,11 @@ export default function (
     }
 
     return (
-        <div className="tarjeta" onClick={handlerClick}>
-            <img className="imagen" src={song.image.url} alt="" />
-                <div>
-                    <h3>{song.title}</h3>
-                    <p>{song.author}</p>
+        <div className="flex px-5 py-3 gap-2 items-center" onClick={handlerClick}>
+            <img className="flex rounded-lg w-50% h-15" src={song.image.url} alt="" />
+                <div className="text-white font-s">
+                    <h3 className="font-bold text-violet-400">{song.title}</h3>
+                    <p className="font-medium text-indigo-300">{song.author}</p>
                 </div>
         </div>
     )
