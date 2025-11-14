@@ -1,24 +1,9 @@
 import { useSong } from "../store"
+import type { Song } from "../types/song"
 
 interface Props {
-    song: {
-        _id: string
-        title: string
-        album: string
-        author: string
-        audio: {
-            url: string
-            id: string
-            filename: string
-        },
-    image: {
-            url: string
-            id: string
-            filename: string
-        }
-    }
+    song: Song
 }
-
 
 export default function (
     { song }: Props

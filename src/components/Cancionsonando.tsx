@@ -1,10 +1,19 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useSong } from "../store"
 
 export default function () {
     // Aqui vamos a escuchar cuando la cancion cambie y la actualizamos
-    const { song } = useSong()
+    const { song,updateSong } = useSong()
     const referenciaAudio = useRef<HTMLAudioElement | null>(null)
+
+    useEffect(function() {
+
+                const cancionguardada = localStorage.getItem("song")
+        
+                if (cancionguardada){
+                    updateSong(JSON.parse(cancionguardada))
+                }
+    }, [])
 
 
     function handlerPlay () {
@@ -32,7 +41,7 @@ export default function () {
                 </button>
             </div>
 
-            <audio src={song?.audio.url} controls autoPlay ref={referenciaAudio}></audio>
+            <audio src={song?.audio.url} autoPlay ref={referenciaAudio}></audio>
         </div>
     )
 }

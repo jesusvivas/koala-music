@@ -1,30 +1,19 @@
 import { create } from "zustand";
+import type { Song } from "./types/song";
 
-interface Song {
-    _id: string
-    title: string
-    author: string
-    album: string
-    image: {
-    id: string
-    url: string
-    filename: string
-    }
-    audio: {
-    id: string
-    url: string
-    filename: string
-    }
-}
+
 
 export const useSong = create(
     function (set): {
         song: Song | null,
-    updateSong: (song: Song) => void
+        updateSong: (song: Song) => void
     } {
+
+
     return {
     song: null,
     updateSong: function (newSong: Song) {
+        localStorage.setItem("song", JSON.stringify(newSong))
         set({ song: newSong })
     }
     }
