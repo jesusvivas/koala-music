@@ -1,3 +1,4 @@
+import { useSong } from "../store"
 
 interface Props {
     song: {
@@ -23,9 +24,12 @@ export default function (
     { song }: Props
 ) {
 
+    const { updateSong } = useSong()
+
     function handlerClick() {
         // Aqui va la logica cuando se haga click en la cancion
         // que esto actualiza la cancion actual sonando
+        updateSong(song)
     }
 
     return (
