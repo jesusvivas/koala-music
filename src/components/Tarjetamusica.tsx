@@ -18,7 +18,7 @@ export default function (
     }
 
     return (
-        <div className="flex px-5 py-3 gap-2 items-center" onClick={handlerClick}>
+        <div className="flex px-5 py-3 gap-2 items-center cursor-pointer hover:bg-gray-700 rounded-lg transition-colors" onClick={handlerClick}>
             <img className="flex rounded-lg w-50% h-15" src={song.image.url} alt="" />
                 <div className="text-white font-s">
                     <h3 className="font-bold text-violet-400">{song.title}</h3>
