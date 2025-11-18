@@ -29,7 +29,7 @@ export default function () {
 
     return (
         <div className="py-20 w-100% flex flex-col items-center gap-3"  >
-            <img src={song?.image.url} alt="imagen de el album" className="w-xl rounded-lg"/>
+            <img src={song?.image.url} alt="imagen de el album" className="w-md rounded-lg"/>
             <div className="text-center">
                 <h2 className="text-4xl font-bold text-stone-300">{song?.title}</h2>
                 <p className="opacity-50 text-indigo-300">{song?.album}</p>
